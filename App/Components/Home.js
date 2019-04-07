@@ -111,7 +111,7 @@ class Home extends Component {
 /* TODO: Implement ALL curreny */
   async getBTCPrice() {
     try {
-      const apirUrl = 'https://blockchain.info/ticker';
+      const apirUrl = 'http://sovcore.org/price.php';
       let response = await fetch(apirUrl);
       let responseJson = await response.json();
       console.log('USD PRICE:', responseJson.USD.last);
