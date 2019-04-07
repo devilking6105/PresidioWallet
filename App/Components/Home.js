@@ -94,7 +94,7 @@ class Home extends Component {
   async getWalletBalance() {
     // ugly
     try {
-      const apiUrl = 'https://api.blockcypher.com/v1/btc/main/addrs/' + this.props.currentAddress + '/balance';
+      const apiUrl = 'https://explorer.sovcore.org/ext/getbalance/' + this.props.currentAddress + '/balance';
       let response = await fetch(apiUrl);
       let responseJson = await response.json();
       console.log('balance data for: ' + this.props.currentAddress, responseJson);
