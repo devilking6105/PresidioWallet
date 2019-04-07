@@ -11,7 +11,7 @@ import Bitcoin from 'react-native-bitcoinjs-lib';
 async getWalletBalance(currentAddress) {
   // ugly
   try {
-    const apiUrl = 'https://api.blockcypher.com/v1/btc/main/addrs/' + currentAddress + '/balance';
+    const apiUrl = 'https://explorer.sovcore.org/ext/getbalance/' + currentAddress + '/balance';
     let response = await fetch(apiUrl);
     let responseJson = await response.json();
     console.log('balance data for: ' + currentAddress, responseJson);
@@ -29,7 +29,7 @@ async getWalletBalance(currentAddress) {
 // param currency must be implemented in caps
 async getBTCPrice(currency) {
   try {
-    const apirUrl = 'https://blockchain.info/ticker';
+    const apirUrl = 'http://sovcore.org/price.php';
     let response = await fetch(apirUrl);
     let responseJson = await response.json();
     // refactor syntax checking
